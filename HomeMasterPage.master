@@ -1,0 +1,109 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="HomeMasterPage.master.cs" Inherits="HomeMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Welcome to Live Meeting</title>
+    <%--<link href="App_Themes/Default.css" rel="stylesheet" type="text/css" />--%>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    <form id="form1" runat="server">
+<%--    <div>
+    <table width="800" border="0" align="center" cellpadding="0" cellspacing="0" class="bordermain" style="background-color:#D3E5ED">
+  <tr>
+    <td  valign="top" >
+   <img src="images/BannerSLMail.jpg" alt="" width="800" />
+   </td>
+  </tr>
+  <tr>
+  <td valign="top" align="center">
+   <asp:Menu ID="Menu1" runat="server" Font-Bold="True" ForeColor="#990000" Orientation="Horizontal"
+                    Width="531px" BackColor="#FFFBD6" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" StaticSubMenuIndent="10px">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home" Value="Home"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/frmAboutUs.aspx" Text="About Us" Value="About Us"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/frmContactUs.aspx" Text="Contact Us" Value="Contact Us">
+                        </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/frmFeedback.aspx" Text="Feedback" Value="Feedback"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Admin/Default.aspx" Text="Admin Login" Value="Admin Login">
+                        </asp:MenuItem>
+                    </Items>
+       <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+       <DynamicHoverStyle BackColor="#990000" ForeColor="White" />
+       <DynamicMenuStyle BackColor="#FFFBD6" />
+       <StaticSelectedStyle BackColor="#FFCC66" />
+       <DynamicSelectedStyle BackColor="#FFCC66" />
+       <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+       <StaticHoverStyle BackColor="#990000" ForeColor="White" />
+                </asp:Menu>
+  </td>
+  </tr>
+  <tr>
+    <td  height="395" valign="top">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </td>
+  </tr>
+  <tr>
+    <td height="30" bgcolor="#E9713F" class="content" align="center" style="text-align: center; color:White" >
+        Live Meeting All Right Reserved &copy; 2009</td>
+  </tr>
+</table>
+    </div>--%>
+
+
+ <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+       <a class="navbar-brand" href="Default.aspx"><span style="font-size:1.3em;color:darkslateblue">Live Meeting</span></a>
+       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <asp:Menu ID="Menu2" runat="server" Orientation="horizontal" 
+            CssClass="navbar-nav" 
+            StaticMenuStyle-CssClass="nav-item" 
+            Font-Size="1.1em"
+            StaticSelectedStyle-CssClass="nav-item"
+            StaticSubMenuIndent="16px"
+            DynamicMenuStyle-CssClass="nav-item dropdown-menu" 
+            RenderingMode="List" ForeColor="Purple"
+            style="margin-left: 250px;margin-bottom: 10px">
+            <LevelMenuItemStyles> 
+                <asp:MenuItemStyle CssClass="dropdown-item" HorizontalPadding="15px" Height="50px" VerticalPadding="15px"  />
+                </LevelMenuItemStyles>
+            <LevelSelectedStyles>
+                <asp:MenuItemStyle CssClass="nav-item active" Font-Underline="False" />
+            </LevelSelectedStyles>
+            <StaticHoverStyle Font-Underline="true"/>
+            <StaticSelectedStyle Font-Bold="true" />
+        <DynamicMenuItemStyle CssClass="dropdown-item" />
+        <Items>
+                <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home" Value="Home"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="~/frmAboutUs.aspx" Text="About Us" Value="About Us"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="~/frmContactUs.aspx" Text="Contact Us" Value="Contact Us"> </asp:MenuItem>
+                <asp:MenuItem NavigateUrl="~/frmFeedback.aspx" Text="Feedback" Value="Feedback"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="~/Admin/Default.aspx" Text="Admin Login" Value="Admin Login"></asp:MenuItem>
+            </Items>
+        </asp:Menu>
+    </div>
+  </div>
+</nav>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-10 " style="padding: 162px" align="center">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+                <div class="col-sm-1"></div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
