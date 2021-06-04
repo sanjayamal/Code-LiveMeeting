@@ -1,6 +1,5 @@
 <%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="Registration_RegisterUser_MasterPage" %>
-<%@ Register Src="../../User Control/SideMainUserControl.ascx" TagName="SideMainUserControl"
-    TagPrefix="uc3" %>
+
 <%@ Register Assembly="GMDatePicker" Namespace="GrayMatterSoft" TagPrefix="cc1" %>
 <%@ Register Src="../../User Control/HeaderUserControl.ascx" TagName="HeaderUserControl"
     TagPrefix="uc2" %>
@@ -72,12 +71,7 @@
                     <%--<uc1:MainUserControl ID="MainUserControl1" runat="server" />--%>
                     <%--<uc3:SideMainUserControl ID="SideMainUserControl1" runat="server" />--%>
 
-                    <div class="container bootdey">
-                        <div class="email-app">
-                            <uc3:SideMainUserControl ID="SideMainUserControl2" runat="server" />
-      
-                        </div>
-                    </div>
+                    
                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                     </asp:ContentPlaceHolder>
                 </div>

@@ -1,8 +1,13 @@
 <%@ Page Language="C#" MasterPageFile="~/Registration/RegisterUser/MasterPage.master"
     AutoEventWireup="true" CodeFile="frmFullMailPage.aspx.cs" Inherits="Registration_RegisterUser_frmFullMailPage"
      %>
+<%@ Register TagPrefix="uc3" TagName="SideMainUserControl" Src="~/User Control/SideMainUserControl.ascx" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+   
+            <uc3:SideMainUserControl ID="SideMainUserControl2" runat="server" />
+         
+     
     <table align="center" border="0" cellpadding="2" cellspacing="2" style="width: 100%">
         <tr>
             <td align="center" colspan="3" style="background-color: #f0f0e8">
@@ -10,8 +15,8 @@
                     <table border="0" cellpadding="0" cellspacing="0" style="width: 100%">
                         <tr>
                             <td style="width: 100px">
-                                <asp:ImageButton ID="ImgReturnToInbox" runat="server" ImageUrl="~/images/ReturnToInbox.jpg"
-                                    OnClick="ImgReturnToInbox_Click" /></td>
+                                <asp:Button CssClass="btn btn-primary" Text="Return to Inbox" ID="btnReturn" runat="server"
+                                    OnClick="btnReturn_OnClick" /></td>
                         </tr>
                     </table>
                 </div>
@@ -34,7 +39,7 @@
             <td align="center" colspan="1" style="font-weight: bold; color: #ffffff; ">
             </td>
         </tr>
-        <tr>
+        <tr style="display: none">
             <td align="left" colspan="3" style="font-weight: bold; color: black; ">
                 Download Attachment&nbsp;
                 <asp:HyperLink ID="HypAttachment" runat="server" Font-Bold="True" ForeColor="Maroon"
@@ -42,7 +47,7 @@
             <td align="center" colspan="1" style="font-weight: bold; color: #ffffff; ">
             </td>
         </tr>
-        <tr>
+        <tr  style="display: none">
             <td align="center" colspan="3" style="font-weight: bold; color: #ffffff; ">
                 <asp:Label ID="lblMsg" runat="server" ForeColor="#004040" Width="331px"></asp:Label></td>
             <td align="center" colspan="1" style="font-weight: bold; color: #ffffff; ">

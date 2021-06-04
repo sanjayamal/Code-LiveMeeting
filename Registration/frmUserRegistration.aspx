@@ -6,7 +6,7 @@
     <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
     <%--<table border="0" cellpadding="2" cellspacing="0" align="right" width="100%">--%>
-      <%--  <tr>
+    <%--  <tr>
             <td colspan="2" align="center">
                 <asp:Label ID="lblMsg" runat="server" Font-Bold="True" Font-Size="10pt" ForeColor="Red"
                     ></asp:Label></td>
@@ -30,7 +30,7 @@
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtName" ErrorMessage="Enter User Name" ValidationGroup="g1" Width="135px"
                     Font-Bold="True"></asp:RequiredFieldValidator></strong></span></td>
         </tr>--%>
-        <%--<tr>
+    <%--<tr>
             <td align="right" style="font-weight: bold;">
                 </td>
             <td>
@@ -45,7 +45,7 @@
                 </asp:UpdatePanel>
             </td>
         </tr>--%>
-       <%-- <tr>
+    <%-- <tr>
             <td align="right" style="font-weight: bold;">
                 Password:</td>
             <td>
@@ -53,7 +53,7 @@
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtPassword" ErrorMessage="Enter Password" ValidationGroup="g1" Width="125px"
                     Font-Bold="True"></asp:RequiredFieldValidator></td>
         </tr>--%>
-       <%-- <tr>
+    <%-- <tr>
             <td align="right" style="font-weight: bold;">
                 Confirm Password:</td>
             <td style="width: 340px">
@@ -62,7 +62,7 @@
                     ControlToValidate="txtConfirm" ErrorMessage="Password Mismatch" ValidationGroup="g1"
                     Font-Bold="True"></asp:CompareValidator></td>
         </tr>--%>
-        <%--<tr>
+    <%--<tr>
             <td align="right" style="font-weight: bold;">
                 Hint Question:</td>
             <td>
@@ -78,7 +78,7 @@
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtAnswer" ErrorMessage="Enter Answer" ValidationGroup="g1" Width="125px"
                     Font-Bold="True"></asp:RequiredFieldValidator></td>
         </tr>--%>
-        <%--<tr>
+    <%--<tr>
             <td align="right" colspan="2" style="font-weight: bold; background-color: Gray">
             </td>
         </tr>--%>
@@ -90,7 +90,7 @@
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtFName" ErrorMessage="Enter First Name" ValidationGroup="g1" Width="125px"
                     Font-Bold="True"></asp:RequiredFieldValidator></td>
         </tr>--%>
-       <%-- <tr>
+    <%-- <tr>
             <td align="right" style="font-weight: bold; ">
                 Last Name:</td>
             <td>
@@ -98,7 +98,7 @@
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtLName" ErrorMessage="Enter Last Name" ValidationGroup="g1" Width="125px"
                     Font-Bold="True"></asp:RequiredFieldValidator></td>
         </tr>--%>
-      <%--  <tr>
+    <%--  <tr>
             <td align="right" style="font-weight: bold;">
                 Address:</td>
             <td>
@@ -119,7 +119,7 @@
                 <asp:TextBox ID="txtCity" runat="server" Width="168px" ValidationGroup="g1"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="txtCity" ErrorMessage="Enter City" ValidationGroup="g1" Width="125px" Font-Bold="True"></asp:RequiredFieldValidator></td>
         </tr>--%>
-<%--        <tr>
+    <%--        <tr>
             <td align="right" style="font-weight: bold;">
                 State:</td>
             <td style="width: 340px">
@@ -128,7 +128,7 @@
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="ddlState" ErrorMessage="Select State" Font-Bold="True"
                     InitialValue="Choose One..." ValidationGroup="g1" Width="125px"></asp:RequiredFieldValidator></td>
         </tr>--%>
-     <%--   <tr>
+    <%--   <tr>
             <td align="right" style="font-weight: bold; width: 216px; height: 26px;">
                 Zip or Postal Code:</td>
             <td>
@@ -136,7 +136,7 @@
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="txtPinCode" ErrorMessage="Enter Postal Code" ValidationGroup="g1" Width="125px"
                     Font-Bold="True"></asp:RequiredFieldValidator></td>
         </tr>--%>
-        <%--<tr>
+    <%--<tr>
             <td align="right" style="font-weight: bold; ">
                 Country:</td>
             <td style="width: 340px">
@@ -145,7 +145,7 @@
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="ddlCountry" ErrorMessage="Select Country" Font-Bold="True"
                     InitialValue="Choose One..." ValidationGroup="g1" Width="125px"></asp:RequiredFieldValidator></td>
         </tr>--%>
-       <%-- <tr>
+    <%-- <tr>
             <td align="right" style="font-weight: bold; ">
                 Email Address:</td>
             <td style="width: 340px">
@@ -153,14 +153,14 @@
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ControlToValidate="txtMail"
                     ErrorMessage="Enter Email" Font-Bold="True" ValidationGroup="g1" Width="76px"></asp:RequiredFieldValidator></td>
         </tr>--%>
-      <%--  <tr>
+    <%--  <tr>
             <td align="right" style="font-weight: bold;">
                 Phone Number:</td>
             <td style="width: 340px">
                 <asp:TextBox ID="txtPhone" runat="server" Width="168px"></asp:TextBox>
             </td>
         </tr>--%>
-      <%--  <tr>
+    <%--  <tr>
             <td align="right" colspan="2" style="font-weight: bold; background-color: Gray">
             </td>
         </tr>
@@ -173,7 +173,7 @@
                 &nbsp;&nbsp;
             </td>
         </tr>--%>
-       <%-- <tr>
+    <%-- <tr>
             <td align="right" style="font-weight: bold; ">
                 Gender:</td>
             <td style="width: 340px">
@@ -184,7 +184,7 @@
                 </asp:DropDownList>
             </td>
         </tr>--%>
-        <%--<tr>
+    <%--<tr>
             <td align="right" style="font-weight: bold; ">
                 Primary Language:</td>
             <td style="width: 340px">
@@ -199,7 +199,7 @@
                 </asp:DropDownList>
             </td>
         </tr>--%>
-        <%--<tr>
+    <%--<tr>
             <td align="right" style="font-weight: bold; ">
                 Household Income:</td>
             <td style="width: 340px">
@@ -207,7 +207,7 @@
                 </asp:DropDownList>
             </td>
         </tr>--%>
-     <%--   <tr>
+    <%--   <tr>
             <td align="right" style="font-weight: bold; ">
                 Occupation:</td>
             <td style="width: 340px">
@@ -215,7 +215,7 @@
                 </asp:DropDownList>
             </td>
         </tr>--%>
-        <%--<tr>
+    <%--<tr>
             <td align="right" style="font-weight: bold; ">
                 Industry:</td>
             <td style="width: 340px">
@@ -223,13 +223,13 @@
                 </asp:DropDownList>
             </td>
         </tr>--%>
-       <%-- <tr>
+    <%-- <tr>
             <td align="right" style="font-weight: bold; ">
             </td>
             <td style="width: 340px">
             </td>
         </tr>--%>
-<%--        <tr>
+    <%--        <tr>
             <td align="right" style="font-weight: bold; ">
                 Intrests:</td>
             <td style="width: 340px">
@@ -238,7 +238,7 @@
                 </asp:CheckBoxList>
             </td>
         </tr>--%>
-<%--        <tr>
+    <%--        <tr>
             <td align="right" >
             </td>
             
@@ -264,7 +264,7 @@ If you cannot read the numbers, refresh/reload this page to try a different set 
                     ControlToValidate="txtNumber" ErrorMessage="No. Not Matched" Font-Bold="True"
                     Width="170px" ValidationGroup="g1"></asp:CompareValidator></td>
         </tr>--%>
-  <%--      <tr>
+    <%--      <tr>
             <td align="center" style="font-weight: bold;" colspan="2">
                 <asp:Button ID="btnContinue" runat="server" Text="Submit" OnClick="btnContinue_Click"
                     ValidationGroup="g1" />
@@ -305,20 +305,19 @@ If you cannot read the numbers, refresh/reload this page to try a different set 
                     Font-Bold="True"></asp:CompareValidator>
             </div>
         </div>
-        <div class="mb-1">
+        <div style="display: none" class="mb-1">
             <label for="question" class="col-form-label" style="font-size: 1.2em">Hint Question</label>
-            <asp:TextBox ID="txtQuestion" runat="server" CssClass="form-control" ValidationGroup="g1"></asp:TextBox>
+            <asp:TextBox ID="txtQuestion" runat="server" CssClass="form-control"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator15" runat="server" ControlToValidate="txtQuestion" ErrorMessage="Enter Hint Question" ValidationGroup="g1"
                 Font-Bold="True"></asp:RequiredFieldValidator>
         </div>
 
-        <div class="mb-1">
+        <div style="display: none" class="mb-1">
             <label for="answer" class="col-form-label" style="font-size: 1.2em">Answer</label>
-            <asp:TextBox ID="txtAnswer" runat="server" CssClass="form-control" ValidationGroup="g1"></asp:TextBox>
+            <asp:TextBox ID="txtAnswer" runat="server" CssClass="form-control"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator16" runat="server" ControlToValidate="txtAnswer" ErrorMessage="Enter Answer" ValidationGroup="g1"
                 Font-Bold="True"></asp:RequiredFieldValidator>
         </div>
-        <hr style="border: 2px solid black" />
 
         <div class="row gx-5">
             <div class="col">
@@ -349,12 +348,11 @@ If you cannot read the numbers, refresh/reload this page to try a different set 
                 <asp:TextBox ID="txtCity" runat="server" CssClass="form-control" ValidationGroup="g1"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="txtCity" ErrorMessage="Enter City" ValidationGroup="g1" Width="125px" Font-Bold="True"></asp:RequiredFieldValidator>
             </div>
-            <div class="col-6">
+            <div style="display: none" class="col-6">
                 <label for="state" class="col-form-label " style="font-size: 1.2em">State</label>
                 <asp:DropDownList ID="ddlState" runat="server" CssClass="form-control">
                 </asp:DropDownList>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator17" runat="server" ControlToValidate="ddlState" ErrorMessage="Select State" Font-Bold="True"
-                    InitialValue="Choose One..." ValidationGroup="g1" Width="125px"></asp:RequiredFieldValidator>
+               
             </div>
 
             <div class="col-6">
@@ -363,12 +361,11 @@ If you cannot read the numbers, refresh/reload this page to try a different set 
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="txtPinCode" ErrorMessage="Enter Postal Code" ValidationGroup="g1"
                     Font-Bold="True"></asp:RequiredFieldValidator>
             </div>
-            <div class="col-6">
+            <div class="col-6" style="display: none">
                 <label for="Country" class="col-form-label " style="font-size: 1.2em">Country</label>
                 <asp:DropDownList ID="ddlCountry" runat="server" CssClass="form-control">
                 </asp:DropDownList>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="ddlCountry" ErrorMessage="Select Country" Font-Bold="True"
-                    InitialValue="Choose One..." ValidationGroup="g1"></asp:RequiredFieldValidator>
+                
             </div>
             <div class="col-6">
                 <label for="email" class="col-form-label " style="font-size: 1.2em">Email</label>
@@ -384,13 +381,13 @@ If you cannot read the numbers, refresh/reload this page to try a different set 
 
         <hr style="border: 2px solid black" />
 
-        <div class="row gx-5">
+        <div class="row gx-5" style="display: none">
             <div class="col-4">
                 <label for="birthDate" class="col-form-label " style="font-size: 1.2em">Birth Date</label>
-                <div style="width:200px">
-                <cc1:GMDatePicker ID="GMDatePicker1" runat="server"  CalendarTheme="Blue" NoneButtonText="Clear" CssClass="form-control" >
-                </cc1:GMDatePicker>
-                    </div>
+                <div style="width: 200px">
+                    <cc1:GMDatePicker ID="GMDatePicker1" runat="server" CalendarTheme="Blue" NoneButtonText="Clear" CssClass="form-control">
+                    </cc1:GMDatePicker>
+                </div>
                 <%--<input type="date/" id="GMDatePicker1" runat="server" class="form-control"/>--%>
                 <%--<asp:TextBox ID="TextBox1" runat="server" CssClass="form-control" TextMode="Date"></asp:TextBox>--%>
             </div>
@@ -430,7 +427,7 @@ If you cannot read the numbers, refresh/reload this page to try a different set 
                 </asp:DropDownList>
             </div>
         </div>
-        <div class="mb-1">
+        <div class="mb-1" style="display: none">
             <label for="intrest" class="col-form-label" style="font-size: 1.2em">Intrests</label>
             <asp:CheckBoxList ID="chklistInrest" runat="server" RepeatColumns="3"
                 RepeatDirection="Horizontal" CssClass="form-control">
@@ -445,7 +442,7 @@ If you cannot read the numbers, refresh/reload this page to try a different set 
                 BorderWidth="1px" Height="20px" Width="110px" Font-Bold="True" Font-Size="14pt"
                 Font-Strikeout="True" ReadOnly="True" BorderStyle="None"></asp:TextBox>
         </div>
-       <%-- <div class="row">
+        <%-- <div class="row">
             <div class="col">
         Enter No. As Shown
           <asp:TextBox ID="txtNumber" runat="server" Width="197px" CssClass="form-control" ValidationGroup="g1"></asp:TextBox>
@@ -455,17 +452,17 @@ If you cannot read the numbers, refresh/reload this page to try a different set 
                 </div>
             </div>--%>
         <div class="row">
-    <label for="noLabel" class="col-sm-3 col-form-label">Enter No. As Shown</label>
-    <div class="col-sm-9">
-        <asp:TextBox ID="txtNumber" runat="server" Width="197px" CssClass="form-control" ValidationGroup="g1"></asp:TextBox>
-        <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="txtRandomNumber"
-            ControlToValidate="txtNumber" ErrorMessage="No. Not Matched" Font-Bold="True"
-            Width="170px" ValidationGroup="g1"></asp:CompareValidator>
-    </div>
-  </div>
+            <label for="noLabel" class="col-sm-3 col-form-label">Enter No. As Shown</label>
+            <div class="col-sm-9">
+                <asp:TextBox ID="txtNumber" runat="server" Width="197px" CssClass="form-control" ValidationGroup="g1"></asp:TextBox>
+                <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="txtRandomNumber"
+                    ControlToValidate="txtNumber" ErrorMessage="No. Not Matched" Font-Bold="True"
+                    Width="170px" ValidationGroup="g1"></asp:CompareValidator>
+            </div>
+        </div>
         <p align="right">
             <asp:Button ID="btnContinue" runat="server" Text="Submit" OnClick="btnContinue_Click"
-                ValidationGroup="g1" CssClass="btn btn-primary" />
+                 CssClass="btn btn-primary" />
         </p>
     </div>
 </asp:Content>

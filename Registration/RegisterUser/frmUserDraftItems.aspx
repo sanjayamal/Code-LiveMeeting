@@ -4,6 +4,8 @@
 
 <%@ Register Src="../../User Control/InboxUserUserControl.ascx" TagName="InboxUserUserControl"
     TagPrefix="uc1" %>
+<%@ Register Src="~/Registration/../User Control/SideMainUserControl.ascx" TagName="SideMainUserControl"
+TagPrefix="uc3" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <table align="left" border="1" bordercolor="#f0f0e8" cellpadding="0" cellspacing="0" style="width: 100%">
         <tr>

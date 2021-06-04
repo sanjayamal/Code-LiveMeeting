@@ -45,10 +45,7 @@ public partial class Registration_RegisterUser_frmFullMailPage : System.Web.UI.P
         }
      
     }
-    protected void ImgReturnToInbox_Click(object sender, ImageClickEventArgs e)
-    {
-        Response.Redirect("~/Registration/RegisterUser/frmUserInbox.aspx");
-    }
+ 
     protected void ImgDelete_Click(object sender, ImageClickEventArgs e)
     {
         inbox.Id = int.Parse(Session["Id"].ToString());
@@ -57,5 +54,10 @@ public partial class Registration_RegisterUser_frmFullMailPage : System.Web.UI.P
         Response.Redirect("~/Registration/RegisterUser/frmUserInbox.aspx");
         lblMsg.Text = "Deleted...!";
     }
-   
+
+    protected void btnReturn_OnClick(object sender, EventArgs e)
+    {
+        Response.Redirect("~/Registration/RegisterUser/frmUserInbox.aspx");
+
+    }
 }

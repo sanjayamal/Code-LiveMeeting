@@ -2,7 +2,7 @@
     CodeFile="Default.aspx.cs" Inherits="_Default" %>
 
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="ContentPlaceHolder1">
- <%--   <table border="0" cellpadding="0" cellspacing="0" width="100%" height="375">
+    <%--   <table border="0" cellpadding="0" cellspacing="0" width="100%" height="375">
         <tr>
             <td style="width: 100%" valign="top" align="left">
                 <table width="100%" border="0" cellpadding="0" cellspacing="0">
@@ -106,6 +106,7 @@
         </tr>
     </table>--%>
     <div id="logreg-forms">
+        <asp:Label ID="InvalidCred" Visible="False" runat="server">Invalid UserName or Password!!</asp:Label>
         <asp:TextBox ID="txtUserName" runat="server" ValidationGroup="g1" CssClass="form-control w-50" placeholder="User Name"></asp:TextBox>
         <asp:RequiredFieldValidator
             ID="RequiredFieldValidator1"
@@ -125,9 +126,12 @@
             ValidationGroup="g1"
             ToolTip="Enter Password"></asp:RequiredFieldValidator>&nbsp;
         <p>
-               <asp:Button ID="btnSignUp" runat="server" Text="Sign In" OnClick="btnSignUp_Click" CssClass="btn btn-success btn-block w-50"  ValidationGroup="g1" /></p>
-       <p> <asp:LinkButton ID="lnkForgotPassword" runat="server" Font-Bold="True" ForeColor="LightBlue" OnClick="lnkForgotPassword_Click" Width="177px">Forgot Your Password ?</asp:LinkButton></p>
-          <hr/>
-        <asp:Button ID="imgRegister" runat="server" Text="Create New Account" OnClick="imgRegister_Click" CssClass="btn btn-primary  w-50" />
+            <asp:Button ID="btnSignUp" runat="server" Text="Sign In" OnClick="btnSignUp_Click" CssClass="btn btn-success btn-block w-50" ValidationGroup="g1" />
+        </p>
+        <p>
+            <asp:LinkButton ID="lnkForgotPassword" runat="server" Font-Bold="True" ForeColor="LightBlue" OnClick="lnkForgotPassword_Click" Width="177px">Forgot Your Password ?</asp:LinkButton></p>
+        <hr />
+        <asp:Button ID="Button1" runat="server" Text="Create New Account" OnClick="imgRegister_Click" CssClass="btn btn-primary  w-50" />
+        <%--<asp:Button ID="btnAdminLogin" runat="server" Text="Admin Login" OnClick="btnAdminLogin_OnClick" CssClass="btn btn-warning  w-50 mt-3" />--%>
     </div>
 </asp:Content>

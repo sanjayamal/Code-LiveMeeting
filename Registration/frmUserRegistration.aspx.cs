@@ -109,46 +109,37 @@ public partial class Registration_frmUserRegistration : System.Web.UI.Page
             else
             {
                 registration.Password = txtPassword.Text.Trim();
-                registration.Question = txtQuestion.Text.Trim();
-                registration.Answer = txtAnswer.Text.Trim();
+                registration.Question = "test";
+                registration.Answer = "test";
                 registration.FirstName = txtFName.Text.Trim();
                 registration.LastName = txtLName.Text.Trim();
                 registration.Address = txtAddress.Text.Trim();
                 registration.City = txtCity.Text.Trim();
-                registration.State = ddlState.SelectedItem.Text.Trim();
+                registration.State = "test";
                  
-                registration.PinCode = txtPinCode.Text.Trim();
-                registration.Country = ddlCountry.SelectedItem.Text.Trim();
+                registration.PinCode = "test";
+                registration.Country = "test";
                 registration.Email = txtMail.Text.Trim();
                 registration.Phone = txtPhone.Text.Trim();
-                registration.DOB = GMDatePicker1.Date;
-                registration.Gender = ddlGender.SelectedItem.Text.Trim();
-                if (ddlLanguage.SelectedIndex == 0)
+                registration.DOB = DateTime.Now;
+                registration.Gender = "Male";
+              
                     registration.Language = "";
-                else
-                registration.Language = ddlLanguage.SelectedItem.Text.Trim();
-            if (ddlIncome.SelectedIndex == 0)
+               
+           
                 registration.Income = "";
-            else
-                registration.Income = ddlIncome.SelectedItem.Text.Trim();
-            if (ddlOccupation.SelectedIndex == 0)
+           
+               
+            
                 registration.Occupation = "";
-            else
-                registration.Occupation = ddlOccupation.SelectedItem.Text.Trim();
-            if (ddlIndustry.SelectedIndex == 0)
+         
+           
                 registration.IndustryType = "";
-            else
-                registration.IndustryType = ddlIndustry.SelectedItem.Text.Trim();
-                string Intrest = "";
-                for (int i = 0; i < chklistInrest.Items.Count; i++)
-                {
-                    if (chklistInrest.Items[i].Selected == true)
-                        Intrest = Intrest + chklistInrest.Items[i].Text + ",";
-
-
-                }
-                Intrest = Intrest.Remove(Intrest.Length - 1, 1);
-                registration.Interest = Intrest;
+          
+                
+                
+               
+                registration.Interest = "";
                 registration.Date = System.DateTime.Now.Date;
                 if (txtNumber.Text.Trim().Length < 1)
                 {
@@ -159,7 +150,7 @@ public partial class Registration_frmUserRegistration : System.Web.UI.Page
                 registration.InsertUserLoginInfo();
                 registration.InsertRegistrationInfo();
                 Session["UserName"] = registration.LoginName;
-                Response.Redirect("~/Registration/frmSignUpSuccessful.aspx");
+                Response.Redirect("~/");
 
             }
            

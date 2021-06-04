@@ -2,23 +2,34 @@
 
 <%@ Register Src="../../User Control/InboxUserUserControl.ascx" TagName="InboxUserUserControl"
     TagPrefix="uc1" %>
+<%@ Register Src="~/Registration/../User Control/SideMainUserControl.ascx" TagName="SideMainUserControl"
+TagPrefix="uc3" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <table align="left" border="1" bordercolor="#f0f0e8" cellpadding="0" cellspacing="0" width="100%">
+    <uc3:SideMainUserControl ID="SideMainUserControl2" runat="server" />
+    <div class="card mt-1">
+    <div class="card-body">
+    <table align="left" cellpadding="0" cellspacing="0" width="100%">
         <tr>
-            <td align="left" style="background-color: #f0f0e8" valign="top">
-                <table border="0" cellpadding="0" cellspacing="0" style="width: 255px">
+            <td align="left" valign="top">
+                <table border="0" cellpadding="0" cellspacing="0" style="width: 100%">
                     <tr>
                         <td style="width: 100px">
-                            <asp:ImageButton ID="ImgReply" runat="server" ImageUrl="~/images/Reply.jpg" OnClick="ImgReply_Click" /></td>
+                                   
+                            <asp:Button CssClass="btn btn-primary" ID="btnReply" runat="server" Text="Reply" OnClick="btnReply_OnClick" />
+                                    
+                        </td>
                         <td style="width: 100px">
-                            <asp:ImageButton ID="ImgForward" runat="server" ImageUrl="~/images/Forward.jpg" OnClick="ImgForward_Click" /></td>
+                            <asp:Button CssClass="btn btn-secondary" ID="btnForward" runat="server" Text="Forward" OnClick="btnForward_OnClick" />
+                        </td>
                         <td style="width: 100px">
-                            <asp:ImageButton ID="ImgDelete" runat="server" ImageUrl="~/images/Delete.jpg" OnClick="ImgDelete_Click" /></td>
-                        <td style="width: 100px">
-                        <a href="#" onclick="window.print();">
-                        <img src="../../images/print.jpg"= alt="" border="0" />
-                        </a>
-                            </td>
+                            <asp:Button CssClass="btn btn-danger" ID="btnDelete" runat="server" Text="Detele" OnClick="btnDelete_OnClick" /></td>
+                        <td style="width: 100px; margin-top: 10px">
+                            <a href="#" onclick="window.print();">
+                                <button class="btn btn-warning">Print</button>
+                            </a>
+
+                        </td>
+                       
                     </tr>
                 </table>
             </td>
@@ -27,12 +38,7 @@
             <td align="center" valign="top">
                 <asp:Label ID="lblMsg" runat="server" Font-Bold="True" ForeColor="Red" Width="349px"></asp:Label>&nbsp;</td>
         </tr>
-        <tr>
-            <td align="center" style="font-weight: bold; font-size: 14pt; color: #ffcc66" valign="top"
-                width="50%">
-                <img src="../../images/Sent.png" style="width: 27px" />
-                &nbsp;Sent Mail&nbsp; Folder</td>
-        </tr>
+     
         <tr>
             <td align="left" valign="top" >
                 <asp:CheckBox ID="CheckBox1" runat="server" AutoPostBack="True" Font-Bold="True"
@@ -95,5 +101,8 @@
         </tr>
        
     </table>
+    </div>
+    </div>
+   
 </asp:Content>
 

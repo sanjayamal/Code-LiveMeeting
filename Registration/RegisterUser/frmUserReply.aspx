@@ -1,7 +1,8 @@
 <%@ Page Language="C#" MasterPageFile="~/Registration/RegisterUser/MasterPage.master"
     AutoEventWireup="true" CodeFile="frmUserReply.aspx.cs" Inherits="Registration_RegisterUser_frmUserReply"
    %>
-
+<%@ Register Src="~/Registration/../User Control/SideMainUserControl.ascx" TagName="SideMainUserControl"
+TagPrefix="uc3" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <table align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%">
         <tr>

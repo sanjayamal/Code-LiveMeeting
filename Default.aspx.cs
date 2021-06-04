@@ -34,7 +34,8 @@ public partial class _Default : System.Web.UI.Page
             }
             else
             {
-                Response.Redirect("~/Registration/frmInvalidUserNamePassword.aspx");
+                InvalidCred.Visible = true;
+                //Response.Redirect("~/Default.aspx");
             }
         }
         catch (Exception)
@@ -53,5 +54,10 @@ public partial class _Default : System.Web.UI.Page
     protected void imgRegister_Click(object sender, EventArgs e)
     {
         Response.Redirect("~/Registration/frmUserRegistration.aspx");
+    }
+
+    protected void btnAdminLogin_OnClick(object sender, EventArgs e)
+    {
+        Response.Redirect("~/Admin/Default.aspx");
     }
 }

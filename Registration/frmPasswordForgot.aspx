@@ -85,12 +85,13 @@
             ErrorMessage="Required" Font-Bold="True" ValidationGroup="g1"
             Width="1px" ToolTip="Enter User Name"></asp:RequiredFieldValidator>
 
-        <asp:TextBox ID="txtQuestion" runat="server" ValidationGroup="g1" TextMode="Password" placeholder="Enter Your Password Question" CssClass="form-control"></asp:TextBox>
+        <asp:TextBox Visible="False" Text="test" ID="txtQuestion" runat="server" ValidationGroup="g1" TextMode="Password" placeholder="Enter Your Password Question" CssClass="form-control"></asp:TextBox>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtQuestion"
             ErrorMessage="Required" Font-Bold="True" ValidationGroup="g1" Width="1px" ToolTip="Enter Question">
         </asp:RequiredFieldValidator>
 
-        <asp:TextBox ID="txtAnswer" runat="server" ValidationGroup="g1" TextMode="Password" placeholder="Enter Your Answer" CssClass="form-control"></asp:TextBox><asp:RequiredFieldValidator
+        <asp:TextBox Visible="False" ID="txtAnswer" Text="test" runat="server" ValidationGroup="g1" TextMode="Password" placeholder="Enter Your Answer" CssClass="form-control"></asp:TextBox>
+        <asp:RequiredFieldValidator
             ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtAnswer" ErrorMessage="Required"
             Font-Bold="True" ValidationGroup="g1" Width="1px" ToolTip="Enter Answer"></asp:RequiredFieldValidator>
 

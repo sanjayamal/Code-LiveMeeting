@@ -4,16 +4,15 @@
 
 <%@ Register Assembly="GMDatePicker" Namespace="GrayMatterSoft" TagPrefix="cc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <table align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-right: blue 1px dotted; border-top: blue 1px dotted; border-left: blue 1px dotted; border-bottom: blue 1px dotted;">
+    <div class="card">
+        <div class="card-header">Update Your Profile</div>
+        <div class="card-body">
+            <table align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
         <tr>
             <td align="center" colspan="2">
                 &nbsp;<asp:Label ID="lblMsg" runat="server" Font-Bold="True" Font-Size="Medium" ForeColor="Maroon"></asp:Label></td>
         </tr>
-        <tr>
-            <td align="right" colspan="2" style="font-weight: bold; font-size: 13pt; color: #ffffff;
-                background-color: #0072b8; text-align: left">
-                Update Your Profile</td>
-        </tr>
+       
         <tr style="font-size: 12pt; font-family: Times New Roman">
             <td align="right" colspan="2" style="font-weight: bold; background-color: Gray">
             </td>
@@ -175,9 +174,12 @@
         </tr>
         <tr>
             <td align="center" colspan="2">
-                <asp:Button ID="btnUpdate" runat="server" Text="Change Profile" ValidationGroup="g1"
+                <asp:Button CssClass="btn btn-primary" ID="btnUpdate" runat="server" Text="Change Profile" ValidationGroup="g1"
                     OnClick="btnUpdate_Click" />
-                <asp:Button ID="btnBack" runat="server" Text="Back" ValidationGroup="g1" OnClick="btnBack_Click" CausesValidation="False" /></td>
+                <asp:Button CssClass="btn btn-secondary" ID="btnBack" runat="server" Text="Back" ValidationGroup="g1" OnClick="btnBack_Click" CausesValidation="False" /></td>
         </tr>
     </table>
+        </div>
+    </div>
+    
 </asp:Content>

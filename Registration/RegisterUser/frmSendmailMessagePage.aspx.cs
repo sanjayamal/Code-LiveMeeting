@@ -24,10 +24,10 @@ public partial class Registration_RegisterUser_frmSendmailMessagePage : System.W
            
         }
     }
-   
-    protected void ImgReturnToInbox_Click(object sender, ImageClickEventArgs e)
+    
+
+    protected void btnReturnToInbox_OnClick(object sender, EventArgs e)
     {
         Response.Redirect("~/Registration/RegisterUser/frmUserInbox.aspx");
     }
-    
 }

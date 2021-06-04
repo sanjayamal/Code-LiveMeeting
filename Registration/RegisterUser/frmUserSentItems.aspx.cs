@@ -42,31 +42,23 @@ public partial class Registration_RegisterUser_frmUserSentItems : System.Web.UI.
             Response.Redirect("~/Registration/RegisterUser/frmFullMailPage.aspx");
         }
     }
-    protected void ImgDelete_Click(object sender, ImageClickEventArgs e)
+
+
+    protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
     {
         CheckBox chk;
-        Label lbl;
-       foreach (GridViewRow gr in GridView1.Rows)
+        foreach (GridViewRow gr in GridView1.Rows)
         {
-            lbl = (Label)gr.FindControl("lblid");
-            inbox.Id = int.Parse(lbl.Text);
-            inbox.From = Session["UserName"].ToString() + ConfigurationManager.AppSettings["email"];
             chk = (CheckBox)gr.FindControl("chk1");
-            if (chk.Checked == true)
-            {
-                inbox.DeleteMailFromSentItem();
-                BindGridview();
-                lblMsg.Text = "";
-            }
+            if (CheckBox1.Checked == true)
+                chk.Checked = true;
             else
-            {
-
-                lblMsg.Text = "Plz Select Mail...!";
-
-            }
-         }
+                chk.Checked = false;
+        }
     }
-    protected void ImgReply_Click(object sender, ImageClickEventArgs e)
+
+
+    protected void btnReply_OnClick(object sender, EventArgs e)
     {
         CheckBox chk;
         Label lbl;
@@ -93,21 +85,10 @@ public partial class Registration_RegisterUser_frmUserSentItems : System.Web.UI.
 
             }
         }
-       
+
     }
-    protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
-    {
-        CheckBox chk;
-        foreach (GridViewRow gr in GridView1.Rows)
-        {
-            chk = (CheckBox)gr.FindControl("chk1");
-            if (CheckBox1.Checked == true)
-                chk.Checked = true;
-            else
-                chk.Checked = false;
-        }
-    }
-    protected void ImgForward_Click(object sender, ImageClickEventArgs e)
+
+    protected void btnForward_OnClick(object sender, EventArgs e)
     {
         CheckBox chk;
         Label lbl;
@@ -126,10 +107,33 @@ public partial class Registration_RegisterUser_frmUserSentItems : System.Web.UI.
             {
 
                 lblMsg.Text = "Plz Select Mail...!";
-              
+
             }
         }
-     
+    }
 
+    protected void btnDelete_OnClick(object sender, EventArgs e)
+    {
+        CheckBox chk;
+        Label lbl;
+        foreach (GridViewRow gr in GridView1.Rows)
+        {
+            lbl = (Label)gr.FindControl("lblid");
+            inbox.Id = int.Parse(lbl.Text);
+            inbox.From = Session["UserName"].ToString() + ConfigurationManager.AppSettings["email"];
+            chk = (CheckBox)gr.FindControl("chk1");
+            if (chk.Checked == true)
+            {
+                inbox.DeleteMailFromSentItem();
+                BindGridview();
+                lblMsg.Text = "";
+            }
+            else
+            {
+
+                lblMsg.Text = "Plz Select Mail...!";
+
+            }
+        }
     }
 }

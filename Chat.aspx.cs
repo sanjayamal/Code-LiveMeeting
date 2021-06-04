@@ -25,17 +25,17 @@ public partial class Chat : System.Web.UI.Page
         
         txtMsg.Attributes.Add("onkeypress", "return clickButton(event,'btn')");
         if (!IsPostBack)
-			{
-                     hdnRoomID.Value = Request.QueryString["rid"];
-                     ChatRoom room = ChatEngine.GetRoom(hdnRoomID.Value);
-					string prevMsgs=room.JoinRoom(Session["UserName"].ToString(),Session["UserName"].ToString() );
-                    txt.Text = prevMsgs;
-                    foreach (string s in room.GetRoomUsersNames())
-                    {
-                        lstMembers.Items.Add(new ListItem(s, s));
-                    }
+        {
+            hdnRoomID.Value = Request.QueryString["rid"];
+            ChatRoom room = ChatEngine.GetRoom(hdnRoomID.Value);
+            string prevMsgs=room.JoinRoom(Session["UserName"].ToString(),Session["UserName"].ToString() );
+            txt.Text = prevMsgs;
+            foreach (string s in room.GetRoomUsersNames())
+            {
+                lstMembers.Items.Add(new ListItem(s, s));
+            }
 					
-			}
+        }
 			
         	
     }
@@ -50,7 +50,7 @@ public partial class Chat : System.Web.UI.Page
     /// <param name="roomID"></param>
     /// <returns></returns>
     [WebMethod]
-    static public string SendMessage(string msg, string roomID)
+    public static string SendMessage(string msg, string roomID)
     {
         try
         {
@@ -71,12 +71,9 @@ public partial class Chat : System.Web.UI.Page
 
 
     /// <summary>
-    /// This function is called peridically called from the user to update the messages
-    /// </summary>
-    /// <param name="otherUserID"></param>
     /// <returns></returns>
     [WebMethod]
-    static public string UpdateUser(string roomID)
+    public static string UpdateUser(string roomID)
     {
         try
         {
@@ -84,7 +81,7 @@ public partial class Chat : System.Web.UI.Page
             if (room != null)
             {
                 string res = "";
-                if (room != null)
+                if (room != null && HttpContext.Current.Session["UserName"] != null)
                 {
                     res = room.UpdateUser(HttpContext.Current.Session["UserName"].ToString());
                 }
@@ -105,7 +102,7 @@ public partial class Chat : System.Web.UI.Page
     /// <param name="otherUser"></param>
     /// <returns></returns>
     [WebMethod]
-    static public string LeaveRoom(string roomID)
+    public static string LeaveRoom(string roomID)
     {
         try
         {
@@ -127,7 +124,7 @@ public partial class Chat : System.Web.UI.Page
     /// <param name="roomID"></param>
     /// <returns></returns>
     [WebMethod]
-    static public string UpdateRoomMembers(string roomID)
+    public static string UpdateRoomMembers(string roomID)
     {
         try
         {

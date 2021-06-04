@@ -1,13 +1,16 @@
 <%@ Page Language="C#" MasterPageFile="~/Registration/RegisterUser/MasterPage.master"
     AutoEventWireup="true" CodeFile="frmUserDeletedMail.aspx.cs" Inherits="Registration_RegisterUser_frmUserDeletedMail"
     %>
-
+<%@ Register Src="~/Registration/../User Control/SideMainUserControl.ascx" TagName="SideMainUserControl"
+TagPrefix="uc3" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <uc3:SideMainUserControl ID="SideMainUserControl2" runat="server" />
+
     <table align="left" border="1" bordercolor="#f0f0e8" cellpadding="0" cellspacing="0" width="100%">
         <tr>
             <td align="center" style="background-color: #f0f0e8" valign="top">
-                <asp:Button ID="btnRestore" runat="server" OnClick="btnRestore_Click" Text="Restore" />
-                <asp:Button ID="btnDelete" runat="server" OnClick="btnDelete_Click" Text="Delete Permanently" />
+                <asp:Button ID="btnRestore" CssClass="btn btn-primary" runat="server" OnClick="btnRestore_Click" Text="Restore" />
+                <asp:Button ID="btnDelete" CssClass="btn btn-warning" runat="server" OnClick="btnDelete_Click" Text="Delete Permanently" />
                 </td>
         </tr>
         <tr>
@@ -16,12 +19,7 @@
                 <asp:Label ID="lblMsg" runat="server" Font-Bold="True" ForeColor="Red" Width="271px"></asp:Label>&nbsp; 
             </td>
         </tr>
-        <tr>
-            <td align="center" style="font-weight: bold; font-size: 14pt; color: #ffcc66" valign="top"
-                >
-                <img src="../../images/Trash.png" style="width: 33px; height: 18px" />
-                Trash Folder</td>
-        </tr>
+       
         <tr>
             <td align="center" style="font-weight: bold; font-size: 14pt; color: #ffcc66" valign="top"
                 >

@@ -48,103 +48,7 @@ public partial class Registration_RegisterUser_frmUserForwardMail : System.Web.U
             txtMailMessage.Text = "";
         }
     }
-    protected void imgSend1_Click(object sender, ImageClickEventArgs e)
-    {
-        try
-        {
-            inbox.LoginName = Session["UserName"].ToString();
-            inbox.From = txtFrom.Text.Trim();
-            inbox.To = txtTo.Text.Trim();
-            inbox.Subject = txtSubject.Text.Trim();
-            inbox.FullMessage = txtMailMessage.Text.Trim();
-            inbox.Date = System.DateTime.Now;
-            string Attachments;
-            if (FileUpload1.HasFile)
-            {
-                Attachments = Server.MapPath("~/Attachments/");
-                if (!Directory.Exists(Attachments))
-                    Directory.CreateDirectory(Attachments);
-                FileUpload1.PostedFile.SaveAs(Attachments + FileUpload1.FileName);
-                inbox.Attachement = FileUpload1.FileName;
-                int size = 0;
-                size = FileUpload1.PostedFile.ContentLength / 1024;
 
-                inbox.Size = size.ToString() + "KB";
-            }
-            else
-            {
-                inbox.Attachement = "";
-                inbox.Size = "";
-            }
-
-            if (chkSave.Checked == false)
-            {
-                inbox.SendStatus = "Not Sent";
-
-            }
-            else
-            {
-                inbox.SendStatus = "Sent";
-            }
-            if (txtTo.Text.Trim().Length <1)
-            {
-                txtTo.Focus();
-            }
-            inbox.InsertInUserInbox();
-            Session["To"] = txtTo.Text.Trim();
-            Response.Redirect("~/Registration/RegisterUser/frmSendmailMessagePage.aspx");
-
-        }
-        catch (Exception)
-        {
-
-            throw;
-        }
-    }
-    protected void ImgSave1_Click(object sender, ImageClickEventArgs e)
-    {
-        try
-        {
-            draft.LoginName = Session["UserName"].ToString();
-            draft.From = txtFrom.Text.Trim();
-            draft.To = txtTo.Text.Trim();
-            draft.Subject = txtSubject.Text.Trim();
-            draft.FullMessage = txtMailMessage.Text.Trim();
-            draft.Date = System.DateTime.Now;
-            string Attachments;
-            if (FileUpload1.HasFile)
-            {
-                Attachments = Server.MapPath("~/Attachments/");
-                if (!Directory.Exists(Attachments))
-                    Directory.CreateDirectory(Attachments);
-                FileUpload1.PostedFile.SaveAs(Attachments + FileUpload1.FileName);
-                draft.Attachement = FileUpload1.FileName;
-                int size = 0;
-                size = FileUpload1.PostedFile.ContentLength / 1024;
-
-                draft.Size = size.ToString() + "KB";
-            }
-            else
-            {
-                draft.Attachement = "";
-                draft.Size = "";
-            }
-
-            draft.InsertInDraftItem();
-
-
-        }
-        catch (Exception)
-        {
-
-            throw;
-        }
-       
-    }
-    protected void ImgCancel1_Click(object sender, ImageClickEventArgs e)
-    {
-        Response.Redirect("~/Registration/frmUserHomePage.aspx");
-    }
     protected void lnkAttachment_Click(object sender, EventArgs e)
     {
         FileUpload1.Visible = true;
@@ -250,5 +154,104 @@ public partial class Registration_RegisterUser_frmUserForwardMail : System.Web.U
     {
         Response.Redirect("~/Registration/frmUserHomePage.aspx");
 
+    }
+
+    protected void btnSend_OnClick(object sender, EventArgs e)
+    {
+        try
+        {
+            inbox.LoginName = Session["UserName"].ToString();
+            inbox.From = txtFrom.Text.Trim();
+            inbox.To = txtTo.Text.Trim();
+            inbox.Subject = txtSubject.Text.Trim();
+            inbox.FullMessage = txtMailMessage.Text.Trim();
+            inbox.Date = System.DateTime.Now;
+            string Attachments;
+            if (FileUpload1.HasFile)
+            {
+                Attachments = Server.MapPath("~/Attachments/");
+                if (!Directory.Exists(Attachments))
+                    Directory.CreateDirectory(Attachments);
+                FileUpload1.PostedFile.SaveAs(Attachments + FileUpload1.FileName);
+                inbox.Attachement = FileUpload1.FileName;
+                int size = 0;
+                size = FileUpload1.PostedFile.ContentLength / 1024;
+
+                inbox.Size = size.ToString() + "KB";
+            }
+            else
+            {
+                inbox.Attachement = "";
+                inbox.Size = "";
+            }
+
+            if (chkSave.Checked == false)
+            {
+                inbox.SendStatus = "Not Sent";
+
+            }
+            else
+            {
+                inbox.SendStatus = "Sent";
+            }
+            if (txtTo.Text.Trim().Length < 1)
+            {
+                txtTo.Focus();
+            }
+            inbox.InsertInUserInbox();
+            Session["To"] = txtTo.Text.Trim();
+            Response.Redirect("~/Registration/RegisterUser/frmSendmailMessagePage.aspx");
+
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+    }
+
+    protected void btn_Save_OnClick_(object sender, EventArgs e)
+    {
+        try
+        {
+            draft.LoginName = Session["UserName"].ToString();
+            draft.From = txtFrom.Text.Trim();
+            draft.To = txtTo.Text.Trim();
+            draft.Subject = txtSubject.Text.Trim();
+            draft.FullMessage = txtMailMessage.Text.Trim();
+            draft.Date = System.DateTime.Now;
+            string Attachments;
+            if (FileUpload1.HasFile)
+            {
+                Attachments = Server.MapPath("~/Attachments/");
+                if (!Directory.Exists(Attachments))
+                    Directory.CreateDirectory(Attachments);
+                FileUpload1.PostedFile.SaveAs(Attachments + FileUpload1.FileName);
+                draft.Attachement = FileUpload1.FileName;
+                int size = 0;
+                size = FileUpload1.PostedFile.ContentLength / 1024;
+
+                draft.Size = size.ToString() + "KB";
+            }
+            else
+            {
+                draft.Attachement = "";
+                draft.Size = "";
+            }
+
+            draft.InsertInDraftItem();
+
+
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+    }
+
+    protected void btn_Cancel_OnClick(object sender, EventArgs e)
+    {
+        Response.Redirect("~/Registration/frmUserHomePage.aspx");
     }
 }

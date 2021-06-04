@@ -50,7 +50,7 @@
 
  <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-       <a class="navbar-brand" href="frmUserInbox.aspx"><span style="font-size:1.3em;color:darkslateblue">Live Meeting</span></a>
+       <a class="navbar-brand" href="Registration/RegisterUser/frmUserInbox.aspx"><span style="font-size:1.3em;color:darkslateblue">Live Meeting</span></a>
        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -74,13 +74,14 @@
             <Items>
                 <asp:MenuItem NavigateUrl="~/Registration/RegisterUser/frmUserInbox.aspx" Text="Home" Value="Home" ></asp:MenuItem>
                 <%--<asp:MenuItem Text="|" Value="|"></asp:MenuItem>--%>
-                <asp:MenuItem NavigateUrl="~/Registration/RegisterUser/frmUpdateUserProfile.aspx"
-                    Text="Update Profile" Value="Update Profile"></asp:MenuItem>
+              
                 <%--<asp:MenuItem Text="|" Value="|"></asp:MenuItem>--%>
                 <%--<asp:MenuItem NavigateUrl="~/Registration/RegisterUser/frmUserInbox.aspx" Text="Check Mail"
                     Value="Check Mail"></asp:MenuItem>--%>
                 <%--<asp:MenuItem Text="|" Value="|"></asp:MenuItem>--%>
                 <asp:MenuItem NavigateUrl="~/Chat.aspx" Text="Joint Chat Room" Value="Joint Chat Room"></asp:MenuItem>
+               <%-- <asp:MenuItem NavigateUrl="~/Registration/RegisterUser/frmUpdateUserProfile.aspx"
+                              Text="Update Profile" Value="Update Profile"></asp:MenuItem>--%>
                 <%--<asp:MenuItem Text="|" Value="|"></asp:MenuItem>--%>
                 <asp:MenuItem NavigateUrl="~/Registration/RegisterUser/frmChangePassword.aspx" Text="Change Password"
                     Value="Change Password"></asp:MenuItem>

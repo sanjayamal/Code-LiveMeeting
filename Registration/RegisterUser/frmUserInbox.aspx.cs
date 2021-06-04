@@ -52,61 +52,7 @@ public partial class Registration_RegisterUser_frmUserInbox : System.Web.UI.Page
             Response.Redirect("~/Registration/RegisterUser/frmFullMailPage.aspx");
         }
     }
-    protected void ImgDelete_Click(object sender, ImageClickEventArgs e)
-    {
-        CheckBox chk;
-        Label lbl;
 
-        foreach (GridViewRow gr in GridView1.Rows)
-        {
-            lbl = (Label)gr.FindControl("lblid");
-            inbox.Id = int.Parse(lbl.Text);
-            inbox.To = Session["UserName"].ToString() + ConfigurationManager.AppSettings["email"];
-            chk = (CheckBox)gr.FindControl("chk1");
-            if (chk.Checked)
-            {
-                inbox.DeleteMailFromInbox();
-                BindGridview();
-                lblError.Text = "";
-            }
-            else
-            {
-                lblError.Visible = true;
-                lblError.Text = "Plz Select Mail...!";
-                    
-            }
-           
-        }
-    }
-    protected void ImgReply_Click(object sender, ImageClickEventArgs e)
-    {
-        CheckBox chk;
-        Label lbl;
-        Literal lbl1;
-
-        foreach (GridViewRow gr in GridView1.Rows)
-        {          
-            chk = (CheckBox)gr.FindControl("chk1");
-            if (chk.Checked == true)
-            {
-                lbl = (Label)gr.FindControl("lblid");
-                lbl1 = (Literal)gr.FindControl("ltl1");
-                inbox.Id = int.Parse(lbl.Text);
-                inbox.To = Session["UserName"].ToString() + ConfigurationManager.AppSettings["email"];
-                Session["To"] = lbl1.Text;
-                Session["Id"] = inbox.Id;
-                Response.Redirect("~/Registration/RegisterUser/frmUserReply.aspx");
-                lblError.Text = "";
-            }
-            else
-            {
-                lblError.Visible = true;
-                lblError.Text = "Plz Select Mail...!";
-
-            }
-        }
-        
-    }
     protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
     {
         CheckBox chk;
@@ -119,31 +65,7 @@ public partial class Registration_RegisterUser_frmUserInbox : System.Web.UI.Page
                 chk.Checked = false;
         }
     }
-    protected void ImgForward_Click(object sender, ImageClickEventArgs e)
-    {
-        CheckBox chk;
-        Label lbl;
-      foreach (GridViewRow gr in GridView1.Rows)
-        {
-            chk = (CheckBox)gr.FindControl("chk1");
-            if (chk.Checked == true)
-            {
-                lbl = (Label)gr.FindControl("lblid");
-                inbox.Id = int.Parse(lbl.Text);
-                Session["Id"] = inbox.Id;
-                Response.Redirect("~/Registration/RegisterUser/frmUserForwardMail.aspx");
-                lblError.Text = "";
-            }
-            else
-            {
-                lblError.Visible = true;
-                lblError.Text = "Plz Select Mail...!";
-
-            }
-        }
-       
-
-    }
+  
     protected void imgSave_Click(object sender, ImageClickEventArgs e)
     {
         CheckBox chk;
@@ -172,6 +94,88 @@ public partial class Registration_RegisterUser_frmUserInbox : System.Web.UI.Page
     {
         GridView1.PageIndex = e.NewPageIndex;
         BindGridview();
+    }
+
+    protected void btnReply_OnClick(object sender, EventArgs e)
+    {
+        CheckBox chk;
+        Label lbl;
+        Literal lbl1;
+
+        foreach (GridViewRow gr in GridView1.Rows)
+        {
+            chk = (CheckBox)gr.FindControl("chk1");
+            if (chk.Checked == true)
+            {
+                lbl = (Label)gr.FindControl("lblid");
+                lbl1 = (Literal)gr.FindControl("ltl1");
+                inbox.Id = int.Parse(lbl.Text);
+                inbox.To = Session["UserName"].ToString() + ConfigurationManager.AppSettings["email"];
+                Session["To"] = lbl1.Text;
+                Session["Id"] = inbox.Id;
+                Response.Redirect("~/Registration/RegisterUser/frmUserReply.aspx");
+                lblError.Text = "";
+            }
+            else
+            {
+                lblError.Visible = true;
+                lblError.Text = "Plz Select Mail...!";
+
+            }
+        }
+
+    }
+
+    protected void btnForward_OnClick(object sender, EventArgs e)
+    {
+        CheckBox chk;
+        Label lbl;
+        foreach (GridViewRow gr in GridView1.Rows)
+        {
+            chk = (CheckBox)gr.FindControl("chk1");
+            if (chk.Checked == true)
+            {
+                lbl = (Label)gr.FindControl("lblid");
+                inbox.Id = int.Parse(lbl.Text);
+                Session["Id"] = inbox.Id;
+                Response.Redirect("~/Registration/RegisterUser/frmUserForwardMail.aspx");
+                lblError.Text = "";
+            }
+            else
+            {
+                lblError.Visible = true;
+                lblError.Text = "Plz Select Mail...!";
+
+            }
+        }
+
+    }
+
+    protected void btnDelete_OnClick(object sender, EventArgs e)
+    {
+        CheckBox chk;
+        Label lbl;
+
+        foreach (GridViewRow gr in GridView1.Rows)
+        {
+            lbl = (Label)gr.FindControl("lblid");
+            inbox.Id = int.Parse(lbl.Text);
+            inbox.To = Session["UserName"].ToString() + ConfigurationManager.AppSettings["email"];
+            chk = (CheckBox)gr.FindControl("chk1");
+            if (chk.Checked)
+            {
+                inbox.DeleteMailFromInbox();
+                BindGridview();
+                lblError.Text = "";
+            }
+            else
+            {
+                lblError.Visible = true;
+                lblError.Text = "Plz Select Mail...!";
+
+            }
+
+        }
     }
 }
 
