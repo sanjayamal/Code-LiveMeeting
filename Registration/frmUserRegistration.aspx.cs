@@ -100,6 +100,12 @@ public partial class Registration_frmUserRegistration : System.Web.UI.Page
         try
         {
             registration.LoginName = txtName.Text.Trim();
+            if (txtMail.Text.Trim().Length < 1 && txtFName.Text.Trim().Length < 1 && txtLName.Text.Trim().Length < 1)
+            {
+                lblMsg.Focus();
+                lblMsg.Text = "Enter first name or last name or email ";
+                return;
+            }
             if (txtPassword.Text.Trim().Length < 6)
             {
                 lblMsg.Focus();

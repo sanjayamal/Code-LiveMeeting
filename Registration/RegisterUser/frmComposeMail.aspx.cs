@@ -60,6 +60,8 @@ public partial class Registration_RegisterUser_frmComposeMail : System.Web.UI.Pa
             inbox.FullMessage = txtMailMessage.Text.Trim();
             inbox.Date = System.DateTime.Now;
           string Attachments;
+
+
           if (FileUpload1.HasFile)
           {
               Attachments = Server.MapPath("~/Attachments/");
@@ -89,7 +91,7 @@ public partial class Registration_RegisterUser_frmComposeMail : System.Web.UI.Pa
           }
           inbox.InsertInUserInbox();
           Session["To"] = txtTo.Text.Trim();
-          Response.Redirect("~/Registration/RegisterUser/frmSendmailMessagePage.aspx");
+         Response.Redirect("~/Registration/RegisterUser/frmSendmailMessagePage.aspx");
      
         }
         catch (Exception)
@@ -162,7 +164,12 @@ public partial class Registration_RegisterUser_frmComposeMail : System.Web.UI.Pa
             lblMsg.Text = "Invalid Email Id...!";
             return;
         }
-
+        if (txtSubject.Text.Trim().Length < 1)
+        {
+            lblMsg.Text = "Subject is required";
+            txtSubject.Focus();
+            return;
+        }
         inbox.Subject = txtSubject.Text.Trim();
         inbox.FullMessage = txtMailMessage.Text.Trim();
         inbox.Date = System.DateTime.Now;
